@@ -1,0 +1,50 @@
+<template name="listIssues">
+<div class='row'>
+  {{> createIssue }}
+  <hr />
+  <div class="col-xs-10 col-xs-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Issues List</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Assigned</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each issues}}
+              <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{dueDate}}</td>
+                <td>
+                  {{#if priorityHigh}}
+                    <span class="label label-danger">{{priority}}</span>
+                  {{/if}}
+                  {{#if priorityMedium}}
+                    <span class="label label-warning">{{priority}}</span>
+                  {{/if}}
+                  {{#if priorityLow}}
+                    <span class="label label-success">{{priority}}</span>
+                  {{/if}}
+                </td>
+                <td>{{status}}</td>
+                <td>{{assigned}}</td>
+                <td>{{#linkTo route='editIssues'}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</template>

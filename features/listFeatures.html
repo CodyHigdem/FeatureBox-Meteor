@@ -1,0 +1,28 @@
+<template name="listFeatures">
+{{> createFeature }}
+<div class="col-md-10 col-md-offset-1">
+  <h1>Features List</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Votes </th>
+        <th>| Title</th>
+        <th>Description</th>
+        <th>Comments</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each features}}
+        <tr>
+          <td><a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a> {{votes}}</td>
+          <td> | {{title}}</td>
+          <td>{{description}}</td>
+          <td>{{commentsCount}}</td>
+          <td>{{#linkTo route='editFeatures'}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+</template>

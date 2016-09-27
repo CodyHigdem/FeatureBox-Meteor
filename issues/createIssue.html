@@ -1,0 +1,11 @@
+<template name="createIssue">
+<div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+    	<div class="panel-heading">Report Bug</div>
+      <div class="panel-body">
+		  <p>Have a bug? List it out here.</p>
+		  {{> quickForm collection="Issues" id="insertIssueForm" type="insert" buttonContent="Create"}}
+	  </div>
+  	</div>
+</div>
+</template>
