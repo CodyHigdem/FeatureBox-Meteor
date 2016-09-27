@@ -4,7 +4,7 @@ Package.describe({
   // Brief, one-line summary of the package.
   summary: 'This is a voting and issue tracking system. Very simple but easy to add to any startup.',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: "https://github.com/qtheninja/FeatureBox-Meteor.git",
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -12,13 +12,12 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.4.1.1');
-  api.use(['ecmascript',
-    'minimongo', 
-    'mongo-livedata', 
-    'templating', 
-    'aldeed:simple-schema', 
-    'aldeed:collection2',
-    'aldeed:autoform']);
+  api.use(['ecmascript@0.1.6',
+    'minimongo@1.0.10', 
+    'templating@1.1.5', 
+    'aldeed:simple-schema@1.5.3', 
+    'aldeed:collection2@2.8.0',
+    'aldeed:autoform@5.8.1']);
 
 
   //files to add
@@ -37,10 +36,11 @@ Package.onUse(function(api) {
   api.export('Features', ['client', 'server']);
 
 });
-
+/*
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
   api.use('qtheninja:featurebox');
   api.mainModule('featurebox-tests.js');
 });
+*/
